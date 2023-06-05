@@ -12,8 +12,8 @@
         </form>
       </div>
       <div class="flex items-center justify-center">
-        <a href="" class="myLinkNav">Nuovo Atleta</a>
-        <a href="" class="myLinkNav">Account</a>
+        <a routerLink="/newUser" routerLinkActive="active" class="myLinkNav">Nuovo Atleta</a>
+        <a routerLink="/account" [queryParams]="{employee: '22222'}" routerLinkActive="active" class="myLinkNav">Account</a>
       </div>
     </div>
   </div>

@@ -8,6 +8,10 @@ import { VisualCardComponent } from './visual-card/visual-card.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { Page404Component } from './page404/page404.component';
+import { NewUserComponent } from './new-user/new-user.component';
+import { AccountComponent } from './account/account.component';
+import { NewCardComponent } from './new-card/new-card.component';
+import { InfoCardComponent } from './info-card/info-card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { Page404Component } from './page404/page404.component';
     VisualCardComponent,
     ProfileComponent,
     HomeComponent,
-    Page404Component
+    Page404Component,
+    NewUserComponent,
+    AccountComponent,
+    NewCardComponent,
+    InfoCardComponent
   ],
   imports: [
     BrowserModule,
