@@ -7,6 +7,7 @@ import { NewUserComponent } from './new-user/new-user.component';
 import { NewCardComponent } from './new-card/new-card.component';
 import { AccountComponent } from './account/account.component';
 import { InfoCardComponent } from './info-card/info-card.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path: 'userManagment', component: ProfileComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'newCard', component: NewCardComponent},
   {path: 'account', component: AccountComponent},
   {path: 'detail', component: InfoCardComponent},
+  {path: 'login', component: LoginComponent},
   {path: '', component: HomeComponent},
   {path: '**', component: Page404Component}
 ];

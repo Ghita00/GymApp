@@ -1,1 +1,23 @@
-<p>account works!</p>
+<div class="">
+  <div class="mx-auto max-w-2xl text-center">
+    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Ciao, con quale account vuoi accedere?</h2>
+    <p class="mt-2 text-lg leading-8 text-gray-600">Questi sono i diversi account che hanno accesso all'applicazione</p>
+  </div>
+  <div class="mx-auto px-8 mt-5 py-5">
+    <div class="grid grid-cols-4 gap-y-10 ">
+        <!--single card-->
+        <a class="group shadow-2xl mr-4" routerLink="/detail" [queryParams]="{user: '11111', card:'1'}">
+            <img src="../../assets/logo.png" alt="" class="border-solid border-black rounded-full">
+            <h3 class="mt-1 text-lg font-bold text-gray-900 ml-5 text-center">Marco Rossi</h3>
+            <div class="grid place-items-center myButtonVisualCard">
+              <!--todo add query param to /userManagment-->
+              <a class="text-center bg-blue-500 hover:bg-blue-700 text-white font-bold px-5 py-2 rounded my-5"
+              routerLink="/login" [queryParams]="{user: '11111'}" routerLinkActive="active" ariaCurrentWhenActive="page">
+                  Accedi
+              </a>
+          </div>
+        </a>
+    </div>
+  </div>
+</div>
+

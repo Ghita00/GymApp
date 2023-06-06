@@ -12,6 +12,7 @@ import { NewUserComponent } from './new-user/new-user.component';
 import { AccountComponent } from './account/account.component';
 import { NewCardComponent } from './new-card/new-card.component';
 import { InfoCardComponent } from './info-card/info-card.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { InfoCardComponent } from './info-card/info-card.component';
     NewUserComponent,
     AccountComponent,
     NewCardComponent,
-    InfoCardComponent
+    InfoCardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
