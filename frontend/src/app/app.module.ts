@@ -13,6 +13,8 @@ import { AccountComponent } from './account/account.component';
 import { NewCardComponent } from './new-card/new-card.component';
 import { InfoCardComponent } from './info-card/info-card.component';
 import { LoginComponent } from './login/login.component';
+import { FooterComponent } from './footer/footer.component';
+import { ModalExercisComponent } from './modal-exercis/modal-exercis.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { LoginComponent } from './login/login.component';
     AccountComponent,
     NewCardComponent,
     InfoCardComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent,
+    ModalExercisComponent
   ],
   imports: [
     BrowserModule,
