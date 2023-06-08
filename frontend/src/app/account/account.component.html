@@ -4,11 +4,11 @@
     <p class="mt-2 text-lg leading-8 text-gray-600">Questi sono i diversi account che hanno accesso all'applicazione</p>
   </div>
   <div class="mx-auto px-8 mt-5 py-5">
-    <div class="grid grid-cols-4 gap-y-10 ">
+    <div class="grid gap-y-10 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2">
         <!--single card-->
-        <a class="group shadow-2xl mr-4 " routerLink="/detail" [queryParams]="{user: '11111', card:'1'}">
-            <img _ngcontent-fpr-c26="" src="../../assets/logo.png" alt="Your Company" class="mx-auto h-40 w-40 rounded-full border-solid border-2 border-indigo-600">
-            <h3 class="mt-1 text-lg font-bold text-gray-900 ml-5 text-center ">Marco Rossi</h3>
+        <a class="group shadow-2xl mr-4" routerLink="/detail" [queryParams]="{user: '11111', card:'1'}">
+            <img _ngcontent-fpr-c26="" src="../../assets/logo.png" alt="Your Company" class="mt-4 mx-auto h-40 w-40 rounded-full border-solid border-2 border-grey-600">
+            <h3 class="mt-2 text-lg font-bold text-gray-900 ml-5 text-center">Marco Rossi</h3>
             <hr class="mx-20">
             <div class="grid place-items-center myButtonVisualCard">
               <!--todo add query param to /userManagment-->

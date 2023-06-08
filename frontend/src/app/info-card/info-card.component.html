@@ -2,7 +2,7 @@
   <!--user information-->
 
   <div class="max-w-8xl mx-auto px-8">
-      <h2 class="mt-2 max-w-5xl text-slate-900 text-6xl tracking-tight font-bold">
+      <h2 class="mt-2 max-w-5xl text-slate-900 text-6xl tracking-tight font-bold break-words">
         Scheda allenamento 1
       </h2>
       <div class="mt-4 max-w-3xl prose prose-slate dark:prose-dark">
@@ -39,14 +39,21 @@
       </div>
 
       <div class="mx-auto px-2 py-5">
-          <div class="grid grid-cols-4 gap-y-10 ">
-              <!--single card-->
-              <a class="group shadow-2xl mr-4" routerLink="/detail" [queryParams]="{user: '11111', card:'1'}">
-                  <img src="../../assets/logo.png">
-                  <h3 class="mt-1 text-lg font-bold text-gray-900 ml-5 ">Lat - 3*15</h3>
-                  <p class="mt-3 text-m text-gray-900 ml-5 mb-5">Esercizio svolto con la lat machine e serve per la schiena</p>
-                  <p class="mt-3 text-m text-gray-900 ml-5 mb-5">Schiena</p>
-              </a>
+          <div class="grid gap-y-10 
+                    xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2">
+                <!--single card-->
+                <div class="shadow-2xl">
+                    <img src="../../assets/logo.png">
+                    <h3 class="mt-1 text-lg font-bold text-gray-900 ml-5 ">Lat - 3*15</h3>
+                    <p class="mt-3 text-m text-gray-900 ml-5 mb-5">Esercizio svolto con la lat machine e serve per la schiena</p>
+
+                    <hr>
+                    <div class="grid gap-y-3 my-3 mr-4
+                                xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2">
+                        <p class="text-m text-gray-900 ml-5 border border-solid border-blue-500 w-min px-3 py-2 rounded-full">Schiena</p>
+                    </div>
+                    
+                </div>
           </div>
       </div>
   </div>
