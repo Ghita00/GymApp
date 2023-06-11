@@ -1,5 +1,5 @@
 <div class="isolate bg-white px-4">
-    <div class="mx-auto max-w-1xl text-center">
+    <div class="mx-auto max-w-1xl text-center mt-4">
       <h2 class="text-4xl font-bold tracking-tight text-gray-900 ">Crea un nuova scheda</h2>
       <p class="mt-2 text-lg leading-8 text-gray-600">Inserisci una nuova scheda per questo atleta</p>
     </div>
@@ -17,7 +17,7 @@
                     <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="bg-white block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                 </div>
             </div>
-            <div class="sm:col-span-2">
+            <div class="col-span-2">
                 <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">Descrizione sommaria della scheda</label>
                 <div class="mt-2.5">
                   <textarea name="message" id="message" rows="2" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
@@ -31,7 +31,7 @@
               <div class="grid mx-5 mr-4
               xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2">
                   <!--single card-->
-                  <a class="group shadow-2xl mb-4 mr-4" routerLink="/detail" [queryParams]="{user: '11111', card:'1'}">
+                  <a class="group shadow-2xl mb-4 mr-4">
                       <img src="../../assets/logo.png" alt="" srcset="">
                       <h3 class="mt-1 text-lg font-bold text-gray-900 ml-5 ">Lat - 3*15</h3>
                       <p class="mt-3 text-m text-gray-900 ml-5 mb-5">Esercizio svolto con la lat machine e serve per la schiena</p>
@@ -43,13 +43,13 @@
                   </a>
                   <!--new empty card-->
                   <div class="group shadow-2xl mb-4 mr-4 border-dashed border-2 border-grey-600">
-                      <a (click)="openModal()" class="flex items-center h-full justify-center text-lg font-bold text-center hover:underline">Aggiungi esercizio</a>
+                      <a (click)="openModal()" class="flex items-center justify-center text-lg font-bold text-center hover:underline h-80">Aggiungi esercizio</a>
                   </div>
                   <div *ngIf="this.seeModal">
                       <app-modal-exercis (triggerCloseModal)="closeModal($event)"></app-modal-exercis>
                   </div>
               </div>
-          </div>
+            </div>
         </div>
         <div class="my-10 mx-28">
             <button type="submit" class="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Crea la scheda</button>

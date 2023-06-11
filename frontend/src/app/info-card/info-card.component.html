@@ -2,7 +2,7 @@
   <!--user information-->
 
   <div class="max-w-8xl mx-auto px-8">
-      <h2 class="mt-2 max-w-5xl text-slate-900 text-6xl tracking-tight font-bold break-words">
+      <h2 class="mt-2 max-w-5xl text-slate-900 text-6xl tracking-tight font-bold break-all">
         Scheda allenamento 1
       </h2>
       <div class="mt-4 max-w-3xl prose prose-slate dark:prose-dark">
@@ -10,22 +10,42 @@
       </div>
   </div>
 
-  <!--tecnical information-->
-  <div class="relative max-w-8xl py-6 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mt-3">
-      <dl class="relative flex flex-wrap h-14 overflow-hidden">
-          <div>
-              <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data di pubblicazione</dt>
-              <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
-                  1 Maggio 2023
-              </dd>
-          </div>
-          <div class="border-l border-slate-500/10 dark:border-slate-400/10 ml-6 pl-6 lg:ml-8 lg:pl-8">
-              <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data di ultima modifica</dt>
-              <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
-                  1 Maggio 2023
-              </dd>
-          </div>
-      </dl>
+  <!--tecnical information desktop-->
+  <div class="hidden md:block">
+    <div class=" relative max-w-8xl py-6 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mt-3">
+        <dl class="relative flex flex-wrap h-14 overflow-hidden">
+            <div>
+                <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data di pubblicazione</dt>
+                <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
+                    1 Maggio 2023
+                </dd>
+            </div>
+            <div class="border-l border-slate-500/10 dark:border-slate-400/10 ml-6 pl-6 lg:ml-8 lg:pl-8">
+                <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data di ultima modifica</dt>
+                <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
+                    1 Maggio 2023
+                </dd>
+            </div>
+        </dl>
+    </div>
+  </div>
+
+  <!--tecnical information mobile-->
+  <div class="md:hidden block px-4">
+    <div class="relative max-w-8xl py-6 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mt-3">
+        <div>
+            <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data di pubblicazione</dt>
+            <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
+                1 Maggio 2023
+            </dd>
+        </div>
+        <div>
+            <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data di ultima modifica</dt>
+            <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
+                1 Maggio 2023
+            </dd>
+        </div>
+    </div>
   </div>
 
   <!--traing cards-->

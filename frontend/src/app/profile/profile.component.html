@@ -9,27 +9,52 @@
         </div>
     </div> 
       
-    <!--tecnical information-->
-    <div class="relative max-w-8xl py-6 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mt-3">
-        <dl class="relative flex flex-wrap h-14 overflow-hidden">
-            <div class="">
-                <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Schede create</dt>
-                <dd class="text-center leading-6 mt-2 text-slate-700 dark:text-slate-200">2</dd>
-            </div>
-            <div class="border-l border-slate-500/10 dark:border-slate-400/10 ml-6 pl-6 lg:ml-8 lg:pl-8">
-                <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data iscrizione</dt>
-                <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
-                    1 Maggio 2023
-                </dd>
-            </div>
-            <div class="border-l border-slate-500/10 dark:border-slate-400/10 ml-6 pl-6 lg:ml-8 lg:pl-8">
-                <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data ultima scheda</dt>
-                <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
-                    5 Giugno 2023
-                </dd>
-            </div>
-        </dl>
+    <!--tecnical information desktop-->
+    <div class="hidden md:block">
+        <div class="relative max-w-8xl py-6 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mt-3">
+            <dl class="relative flex flex-wrap h-14 overflow-hidden">
+                <div class="">
+                    <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Schede create</dt>
+                    <dd class="text-center leading-6 mt-2 text-slate-700 dark:text-slate-200">2</dd>
+                </div>
+                <div class="border-l border-slate-500/10 dark:border-slate-400/10 ml-6 pl-6 lg:ml-8 lg:pl-8">
+                    <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data iscrizione</dt>
+                    <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
+                        1 Maggio 2023
+                    </dd>
+                </div>
+                <div class="border-l border-slate-500/10 dark:border-slate-400/10 ml-6 pl-6 lg:ml-8 lg:pl-8">
+                    <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data creazione ultima scheda</dt>
+                    <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
+                        5 Giugno 2023
+                    </dd>
+                </div>
+            </dl>
+        </div>
     </div>
+    
+
+    <!--tecnical information mobile-->
+  <div class="md:hidden block px-4">
+    <div class="relative max-w-8xl py-6 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mt-3">
+        <div>
+            <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Schede create</dt>
+            <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">2</dd>
+        </div>
+        <div>
+            <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data di pubblicazione</dt>
+            <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
+                1 Maggio 2023
+            </dd>
+        </div>
+        <div>
+            <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data di ultima modifica</dt>
+            <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
+                1 Maggio 2023
+            </dd>
+        </div>
+    </div>
+  </div>
 
     <!--traing cards-->
     <div class="max-w-8xl mx-auto px-8">
@@ -41,25 +66,28 @@
             Tutte le schede di allenamento ordinate dalla più recente alla meno recente
         </div>
            
-        <div class="mx-auto px-2 py-5">
-            <div class="grid gap-y-10 
-            xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2">
-                <!--single card-->
-                <a class="group shadow-2xl mr-4" routerLink="/detail" [queryParams]="{user: '11111', card:'1'}">
-                    <div class="h-4 bg-orange-500 w-100"></div>
-                    <h3 class="mt-1 text-lg font-bold text-gray-900 ml-5 ">Scheda allenamento 1</h3>
-                    <p class="mt-3 text-m text-gray-900 ml-5 mb-5">Scheda basata sull'attivazione muscolare</p>
-                    <hr>
-                    <p class="mt-4 text-sm text-gray-500 ml-5 mb-5">data di pubblicazione: 1 Maggio 2023</p>
-                    <p class=" text-sm text-gray-500 ml-5 mb-5">data di ultima modifica: 1 Maggio 2023</p>
-                </a>
+        <div class="col-span-2">
+            <div class="mx-auto py-5">
+                <div class="grid gap-y-10 
+                xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                    <!--single card-->
+                    <a class="group shadow-2xl mr-4" routerLink="/detail" [queryParams]="{user: '11111', card:'1'}">
+                        <div class="h-4 bg-orange-500 w-100"></div>
+                        <h3 class="mt-1 text-lg font-bold text-gray-900 mx-5">Scheda allenamento 1</h3>
+                        <p class="mt-3 text-m text-gray-900 mx-5 mb-5">Scheda basata sull'attivazione muscolare</p>
+                        <hr>
+                        <p class="mt-4 text-sm text-gray-500 mx-5 mb-5">data di pubblicazione: 1 Maggio 2023</p>
+                        <p class=" text-sm text-gray-500 mx-5 mb-5">data di ultima modifica: 1 Maggio 2023</p>
+                    </a>
 
-                <!--new empty card-->
-                <div class="group shadow-2xl mr-4 border-dashed border-2 border-grey-600">
-                    <a routerLink="/newCard" [queryParams]="{user:1111}" class="flex items-center h-full justify-center text-lg font-bold text-center hover:underline">Crea Nuova Scheda</a>
+                    <!--new empty card-->
+                    <div class="group shadow-2xl mr-4 border-dashed border-2 border-grey-600 h-80">
+                        <a routerLink="/newCard" [queryParams]="{user:1111}" class="flex items-center h-full justify-center text-lg font-bold text-center hover:underline">Crea Nuova Scheda</a>
+                    </div>
                 </div>
             </div>
         </div>
+        
     </div>
 </div> 
     
