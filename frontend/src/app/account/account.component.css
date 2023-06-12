@@ -1,0 +1,6 @@
+
+@media (min-width : 400px) {
+    .myMinHeight{
+        min-height: 600px;
+    }
+}
