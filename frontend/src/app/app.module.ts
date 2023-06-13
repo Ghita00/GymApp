@@ -15,7 +15,8 @@ import { InfoCardComponent } from './info-card/info-card.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { ModalExercisComponent } from './modal-exercis/modal-exercis.component';
-
+import { HttpClientModule } from '@angular/common/http'; 
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { ModalExercisComponent } from './modal-exercis/modal-exercis.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
