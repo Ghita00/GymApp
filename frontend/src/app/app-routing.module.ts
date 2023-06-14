@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProfileComponent } from './profile/profile.component';
-import { HomeComponent } from './home/home.component';
-import { Page404Component } from './page404/page404.component';
-import { NewUserComponent } from './new-user/new-user.component';
-import { NewCardComponent } from './new-card/new-card.component';
-import { AccountComponent } from './account/account.component';
-import { InfoCardComponent } from './info-card/info-card.component';
-import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { HomeComponent } from './components/home/home.component';
+import { Page404Component } from './components/page404/page404.component';
+import { NewUserComponent } from './components/new-user/new-user.component';
+import { NewCardComponent } from './components/new-card/new-card.component';
+import { AccountComponent } from './components/account/account.component';
+import { InfoCardComponent } from './components/info-card/info-card.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {path: 'userManagment', component: ProfileComponent},

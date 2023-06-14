@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CardServiceService } from '../services/card-service.service';
-import { Card } from '../modules/classes';
+import { CardServiceService } from '../../services/card-service.service';
+import { Card } from '../../modules/classes';
 
 @Component({
   selector: 'app-profile',

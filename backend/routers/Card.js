@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router();
 
 
-router.get('/', (req, res) => {
+router.get('/allCards', (req, res) => {
     res.send([{
       name: "scheda 1",
       desc: "scheda di attivazione",

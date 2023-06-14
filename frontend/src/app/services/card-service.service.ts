@@ -7,13 +7,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CardServiceService {
 
-  BASE_URL : string = "http://localhost:8000/";
+  BASE_URL : string = "http://localhost:8000";
 
   constructor(
     private http: HttpClient
   ) { }
 
   public getAllCards() : any{
-    return this.http.get(this.BASE_URL);
+    return this.http.get(this.BASE_URL+"/allCards");
   }
 }
