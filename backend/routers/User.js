@@ -38,10 +38,10 @@ router.get("/singleUses", (req, res) => {
   res.send({ err: "error" });
 });
 
-module.exports = router;
-
 //create a new user
 router.post("/createUser", (req, res) => {
   cards.push(req.body);
   res.send({ succ: "insert completed" });
 });
+
+module.exports = router;
