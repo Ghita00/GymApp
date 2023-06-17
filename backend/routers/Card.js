@@ -18,6 +18,13 @@ let cards = [
           "Esercizio svolto con la lat machine e serve per la schiena",
         influenceArea: ["Schiena"],
       },
+      {
+        name: "Croci",
+        rep: "10",
+        series: "4",
+        description: "Esercizio svolto con i manubri per il petto",
+        influenceArea: ["Petto", "Schiena", "Testa", "Glutei"],
+      }
     ],
   },
   {
