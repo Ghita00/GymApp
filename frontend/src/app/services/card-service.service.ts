@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Card } from '../modules/classes';
+import { Card, User } from '../modules/classes';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

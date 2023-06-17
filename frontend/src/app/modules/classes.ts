@@ -14,3 +14,14 @@ export interface Execise {
     description: string,
     influenceArea: string[],
 }
+
+export interface User{
+    id: string
+    name: string,
+    img?: string | null,
+    surname: string,
+    description?: string | null
+    cardsId?: string[],
+    inscriptionDate?: string,
+    lastCardDate?: string
+}

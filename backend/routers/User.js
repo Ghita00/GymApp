@@ -1,5 +1,8 @@
+const bodyParser = require('body-parser');
 const express = require("express");
 const router = express.Router();
+
+const jsonParser = bodyParser.json();
 
 let users = [
   {
@@ -39,8 +42,10 @@ router.get("/singleUses", (req, res) => {
 });
 
 //create a new user
-router.post("/createUser", (req, res) => {
-  cards.push(req.body);
+router.post("/createUser", jsonParser, (req, res) => {
+  console.log(req.body)
+  users.push(req.body);
+  console.log("[SERVER] insert "+ users);
   res.send({ succ: "insert completed" });
 });
 
