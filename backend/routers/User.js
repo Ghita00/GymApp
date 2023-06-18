@@ -12,7 +12,7 @@ let users = [
     description: "Ragazzo di 22 anni che frquenta palestra per la prima volta",
     inscriptionDate: "10/05/2023",
     lastCardDate: "20/06/2023",
-    cardsId: ["0001"],
+    cardsId: ["0001", "0002"],
   },
   {
     id: "1002",
@@ -31,7 +31,7 @@ router.get("/allUsers", (req, res) => {
 });
 
 //return one single user
-router.get("/singleUses", (req, res) => {
+router.get("/singleUser", (req, res) => {
   console.log("[SERVER] " + req.query.user);
   for (let user of users) {
     if (user.id == req.query.user) {

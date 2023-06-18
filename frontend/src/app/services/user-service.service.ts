@@ -23,4 +23,8 @@ export class UserServiceService {
   public getAllUser() : any{
     return this.http.get(this.BASE_URL+"/allUsers");
   }
+ 
+  public getSingleUser(user: string) : any{
+    return this.http.get(this.BASE_URL+"/singleUser?user="+user);
+  }
 }

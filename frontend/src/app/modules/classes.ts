@@ -1,4 +1,5 @@
 export interface Card {
+    id: string,
     name: string,
     desc: string,
     pubDate: string,
@@ -8,6 +9,7 @@ export interface Card {
 }
 
 export interface Execise {
+    id: string,
     name: string,
     rep: string,
     series: string,
@@ -16,7 +18,7 @@ export interface Execise {
 }
 
 export interface User{
-    id: string
+    id: string,
     name: string,
     img?: string | null,
     surname: string,

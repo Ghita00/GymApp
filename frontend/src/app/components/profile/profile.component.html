@@ -2,10 +2,10 @@
     <!--user information-->
     <div class="max-w-8xl mx-auto px-8">
         <h2 class="mt-2 max-w-5xl text-slate-900 text-6xl tracking-tight font-bold">
-            Giorgio Basile
+            {{user.name}}
         </h2>
         <div class="mt-4 max-w-3xl prose prose-slate dark:prose-dark">
-            Ragazzo di 22 anni che frquenta palestra per la prima volta
+            {{user.description}}
         </div>
     </div> 
 
@@ -18,18 +18,18 @@
             <dl class="relative flex flex-wrap h-14 overflow-hidden">
                 <div class="">
                     <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Schede create</dt>
-                    <dd class="text-center leading-6 mt-2 text-slate-700 dark:text-slate-200">2</dd>
+                    <dd class="text-center leading-6 mt-2 text-slate-700 dark:text-slate-200">{{user.cardsId ? user.cardsId.length : 0}}</dd>
                 </div>
                 <div class="border-l border-slate-500/10 dark:border-slate-400/10 ml-6 pl-6 lg:ml-8 lg:pl-8">
                     <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data iscrizione</dt>
                     <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
-                        1 Maggio 2023
+                        {{user.inscriptionDate}}
                     </dd>
                 </div>
                 <div class="border-l border-slate-500/10 dark:border-slate-400/10 ml-6 pl-6 lg:ml-8 lg:pl-8">
                     <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data creazione ultima scheda</dt>
                     <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
-                        5 Giugno 2023
+                        {{user.lastCardDate}}
                     </dd>
                 </div>
             </dl>
@@ -42,18 +42,18 @@
     <div class="relative max-w-8xl pb-6 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mt-3">
         <div>
             <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Schede create</dt>
-            <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">2</dd>
+            <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">{{user.cardsId ? user.cardsId.length : 0}}</dd>
         </div>
         <div>
-            <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data di pubblicazione</dt>
+            <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data iscrizione</dt>
             <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
-                1 Maggio 2023
+                {{user.inscriptionDate}}
             </dd>
         </div>
         <div>
-            <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data di ultima modifica</dt>
+            <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data creazione ultima scheda</dt>
             <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
-                1 Maggio 2023
+                {{user.lastCardDate}}
             </dd>
         </div>
     </div>
@@ -75,7 +75,7 @@
                 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                     <!--single card-->
                     <a *ngFor="let card of cards" 
-                    class="group shadow-2xl mr-4" routerLink="/detail" [queryParams]="{user: '11111', card:'1'}">
+                    class="group shadow-2xl mr-4" routerLink="/detail" [queryParams]="{user: user.id, card:card.id}">
                         <div class="h-4 bg-orange-500 w-100"></div>
                         <h3 class="mt-1 text-lg font-bold text-gray-900 mx-5">{{card.name}}</h3>
                         <p class="mt-3 text-m text-gray-900 mx-5 mb-5">{{card.desc}}</p>
@@ -86,7 +86,7 @@
 
                     <!--new empty card-->
                     <div class="group shadow-2xl mr-4 border-dashed border-2 border-grey-600 h-80">
-                        <a routerLink="/newCard" [queryParams]="{user:1111}" class="flex items-center h-full justify-center text-lg font-bold text-center hover:underline">Crea Nuova Scheda</a>
+                        <a routerLink="/newCard" [queryParams]="{user:userQueryParam}" class="flex items-center h-full justify-center text-lg font-bold text-center hover:underline">Crea Nuova Scheda</a>
                     </div>
                 </div>
             </div>

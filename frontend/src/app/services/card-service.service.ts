@@ -17,6 +17,10 @@ export class CardServiceService {
     return this.http.get(this.BASE_URL+"/allCards");
   }
 
+  public getSingleCards(card: string) : any{
+    return this.http.get(this.BASE_URL+"/detailCard?card="+card);
+  }
+
   public getExerciseOfCard(idCard : string) : any{
     return this.http.get(this.BASE_URL+"/detailCard?user=1111&card="+idCard);
   }

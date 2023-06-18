@@ -55,7 +55,7 @@ router.get("/allCards", (req, res) => {
 router.get("/detailCard", (req, res) => {
   console.log("[SERVER] " + req.query.card);
   for (let card of cards) {
-    console.log("[SERVER] " + card.id);
+    console.log("[SERVER] say " + card.id);
     if (card.id == req.query.card) {
       res.send(card);
     }
