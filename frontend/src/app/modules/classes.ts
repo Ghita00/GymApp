@@ -27,3 +27,12 @@ export interface User{
     inscriptionDate?: string,
     lastCardDate?: string
 }
+
+export interface Employ{
+    id:string,
+    name: string,
+    surname: string,
+    user: string,
+    password: string,
+    yourUsers: string[]
+}

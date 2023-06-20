@@ -1,23 +1,24 @@
-<div class="">
+<div>
   <div class="mx-auto max-w-2xl text-center my-4">
-    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Ciao, con quale account vuoi accedere?</h2>
-    <p class="mt-2 text-lg leading-8 text-gray-600">Questi sono i diversi account che hanno accesso all'applicazione</p>
+    <h2 class="mb-4 max-w-5xl text-slate-900 text-6xl tracking-tight font-bold break-words">Ciao, con quale account vuoi accedere?</h2>
+    <p class="mt-2 text-xl leading-8 text-gray-600">Questi sono i diversi account che hanno accesso all'applicazione</p>
   </div>
   <div class="myMinHeight sm:h-auto mx-auto px-8 mt-5 py-5  ">
     <div class="grid gap-y-10 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1">
         <!--single card-->
-        <a class="group shadow-2xl mr-4" routerLink="/detail" [queryParams]="{user: '11111', card:'1'}">
+        <div *ngFor="let employ of employs"
+            class="group shadow-2xl mr-4">
             <img _ngcontent-fpr-c26="" src="../../assets/logo.png" alt="Your Company" class="mt-4 mx-auto h-40 w-40 rounded-full border-solid border-2 border-grey-600">
-            <h3 class="mt-2 text-lg font-bold text-gray-900 ml-5 text-center">Marco Rossi</h3>
+            <h3 class="mt-2 text-lg font-bold text-gray-900 ml-5 text-center">{{employ.name}} {{employ.surname}}</h3>
             <hr class="mx-20">
             <div class="grid place-items-center myButtonVisualCard">
               <!--todo add query param to /userManagment-->
               <a class="text-center bg-indigo-500 hover:bg-indigo-700 text-white font-bold px-5 py-2 rounded my-5"
-              routerLink="/login" [queryParams]="{user: '11111'}" routerLinkActive="active" ariaCurrentWhenActive="page">
+              routerLink="/login" [queryParams]="{user: employ.name + ' ' + employ.surname }" routerLinkActive="active" ariaCurrentWhenActive="page">
                   Accedi
               </a>
           </div>
-        </a>
+        </div>
     </div>
   </div>
 </div>
