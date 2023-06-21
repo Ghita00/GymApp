@@ -44,7 +44,7 @@ export class ProfileComponent implements OnInit {
       }
     )
 
-    this.subscribeUser = this.userService.getSingleUser(this.userQueryParam).subscribe((data : User) => {
+    this.subscribeUser = this.userService.getSingleUserById(this.userQueryParam).subscribe((data : User) => {
       this.user = data;
       console.log(this.user);
       if(this.user.cardsId){

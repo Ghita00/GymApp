@@ -12,7 +12,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class VisualCardComponent implements OnInit {
   //form search
   // @ts-ignore
-  public formSearch: FormGroup
+  public formSearch: FormGroup;
 
   //datas
   public users: Array<User> = [];
@@ -53,13 +53,11 @@ export class VisualCardComponent implements OnInit {
         console.log(this.users);
       })
     }else{
-      this.subscribeUserFilter = this.userService.getSingleUser(name).subscribe((data: Array<User>) => {
+      this.subscribeUserFilter = this.userService.getSingleUserByName(name).subscribe((data: Array<User>) => {
         this.users = data;
         console.log(this.users);
       })
-    }
-    
-    
+    } 
   }
 
 }

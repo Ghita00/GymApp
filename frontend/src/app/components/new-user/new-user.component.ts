@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { User } from 'src/app/modules/classes';
 import { UserServiceService } from 'src/app/services/user-service.service';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-new-user',
@@ -8,34 +10,41 @@ import { UserServiceService } from 'src/app/services/user-service.service';
   styleUrls: ['./new-user.component.css']
 })
 export class NewUserComponent implements OnInit {
-  
+  //form create
+  // @ts-ignore
+  public formCreate: FormGroup;
+
+  public subscribeUser: Subscription
+
   constructor(
-    private cardService: UserServiceService
-  ) { 
+    private userService: UserServiceService
+  ) {
+    this.subscribeUser = Subscription.EMPTY;
   }
 
   ngOnInit(): void {
+    this.formCreate = new FormGroup({
+      image: new FormControl(),
+      name: new FormControl(),
+      surname: new FormControl(),
+      description: new FormControl()
+    })
   }
 
-  addUser(): void {
+  OnDestroy(): void {
+    this.subscribeUser.unsubscribe();
+  }
 
-    let name: string | undefined = document.getElementById("first-name")?.innerHTML;
-    let surname: string | undefined = document.getElementById("last-name")?.innerHTML;
-    let img: string | undefined = document.getElementById("image")?.innerHTML;
-    let description: string | undefined = document.getElementById("message")?.innerHTML;
+  onSubmit(): void{
+    console.log(this.formCreate.value);
+    let user = this.formCreate.value;
+    user.cardsId = null;
+    user.inscriptionDate = Date.now();
+    user.lastCardDate = null;
 
-    //todo learn how to use form in angular
-
-    let user : User = {
-      id : "1002",
-      name: "name",
-      img: null,
-      surname: "surname",
-      description: "description",
-      cardsId: []
-    }
-
-    this.cardService.insertUser(user)
+    this.subscribeUser = this.userService.insertUser(user).subscribe((data: any) => {
+      console.log(data);
+    })
 
   }
 }

@@ -51,4 +51,17 @@ router.post("/filterUserByName", jsonParser, (req, res) => {
   res.send(listOfuser);
 })
 
+//filter user by id
+router.post("/filterUserById", jsonParser, (req, res) => {
+  const id = req.body.id;
+  let userFind = null;
+  for(let user of users){
+    console.log("[SERVER] "+ user.id + ', ' + id);
+    if(user.id == id){
+      userFind = user;
+    }
+  }
+  res.send(userFind);
+})
+
 module.exports = router;

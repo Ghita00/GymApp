@@ -23,7 +23,11 @@ export class UserServiceService {
     return this.http.get(BASE_URL+"/allUsers");
   }
  
-  public getSingleUser(user: string) : any{
+  public getSingleUserByName(user: string) : any{
     return this.http.post(BASE_URL+"/filterUserByName", {'user': user});
+  }
+
+  public getSingleUserById(id: string) : any{
+    return this.http.post(BASE_URL+"/filterUserById", {'id': id});
   }
 }
