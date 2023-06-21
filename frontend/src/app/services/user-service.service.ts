@@ -24,6 +24,6 @@ export class UserServiceService {
   }
  
   public getSingleUser(user: string) : any{
-    return this.http.get(BASE_URL+"/singleUser?user="+user);
+    return this.http.post(BASE_URL+"/filterUserByName", {'user': user});
   }
 }

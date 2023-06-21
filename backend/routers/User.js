@@ -30,17 +30,6 @@ router.get("/allUsers", (req, res) => {
   res.send(users);
 });
 
-//return one single user
-router.get("/singleUser", (req, res) => {
-  console.log("[SERVER] " + req.query.user);
-  for (let user of users) {
-    if (user.id == req.query.user) {
-      res.send(user);
-    }
-  }
-  res.send({ err: "error" });
-});
-
 //create a new user
 router.post("/createUser", jsonParser, (req, res) => {
   console.log(req.body)
@@ -48,5 +37,18 @@ router.post("/createUser", jsonParser, (req, res) => {
   console.log("[SERVER] insert "+ users);
   res.send({ succ: "insert completed" });
 });
+
+//filter user by name
+router.post("/filterUserByName", jsonParser, (req, res) => {
+  const name = req.body.user;
+  let listOfuser = [];
+  for(let user of users){
+    console.log("[SERVER] "+ user.name + ', ' + name);
+    if(user.name == name){
+      listOfuser.push(user);
+    }
+  }
+  res.send(listOfuser);
+})
 
 module.exports = router;
