@@ -36,3 +36,8 @@ export interface Employ{
     password: string,
     yourUsers: string[]
 }
+
+export interface CredentialEmploy{
+    user: string,
+    password: string
+}
