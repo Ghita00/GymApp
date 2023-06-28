@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require("express");
 const router = express.Router();
+const mongoose = require("mongoose");
 
 const jsonParser = bodyParser.json();
 
@@ -27,8 +28,31 @@ let employs = [
   }
 ];
 
-router.get("/allEmploys", (req, res) => {
-    res.send(employs);
+//employ schema
+const schema = new mongoose.Schema({
+  name: String,
+  user: String,
+  password: String,
+  userManagment: [String]
+});
+
+//employ model
+const model = mongoose.model("employ", schema);
+
+async function insertUser(){
+  console.log("Test insert");
+  await new model({
+    name: "test",
+    user: "spero funzioni",
+    password:"aaa",
+    userManagment: []
+  }).save();
+}
+
+router.get("/allEmploys", async (req, res) => {
+    //insertUser();
+    //res.send(employs);
+    res.send(await model.find());
 })
 
 router.post("/login",jsonParser, (req, res) => {
