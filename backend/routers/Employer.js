@@ -5,29 +5,6 @@ const mongoose = require("mongoose");
 
 const jsonParser = bodyParser.json();
 
-let employs = [
-  {
-    id: "1",
-    name: "Marco",
-    surname: "Rossi",
-    user: "aaaa",
-    password: "password",
-    yourUsers: [
-        "1001"
-    ]
-  },
-  {
-    id:"2",
-    name: "Mattia",
-    surname: "Bianchi",
-    user: "bbbb",
-    password: "password2",
-    yourUsers: [
-        "1002"
-    ]
-  }
-];
-
 //employ schema
 const schema = new mongoose.Schema({
   name: String,
@@ -40,7 +17,7 @@ const schema = new mongoose.Schema({
 const model = mongoose.model("employ", schema);
 
 router.get("/allEmploys", async (req, res) => {
-    res.send(await model.find());
+  res.send(await model.find());
 })
 
 router.post("/login",jsonParser, async (req, res) => {

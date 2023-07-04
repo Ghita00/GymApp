@@ -3,6 +3,7 @@ import { User } from 'src/app/modules/classes';
 import { UserServiceService } from 'src/app/services/user-service.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-user',
@@ -17,6 +18,7 @@ export class NewUserComponent implements OnInit {
   public subscribeUser: Subscription
 
   constructor(
+    private router: Router,
     private userService: UserServiceService
   ) {
     this.subscribeUser = Subscription.EMPTY;
@@ -42,9 +44,11 @@ export class NewUserComponent implements OnInit {
     user.inscriptionDate = Date.now();
     user.lastCardDate = null;
 
+    this.router.navigate(['/']);
     this.subscribeUser = this.userService.insertUser(user).subscribe((data: any) => {
       console.log(data);
     })
 
+    
   }
 }
