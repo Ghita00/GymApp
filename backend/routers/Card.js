@@ -46,27 +46,48 @@ let cards = [
   },
 ];
 
+const mongoose = require("mongoose");
+
+const jsonParser = bodyParser.json();
+
+//card schema
+const schema = new mongoose.Schema({
+  name: String,
+  description: String,
+  pubDate: String,
+  modDate: String,
+  color: String,
+  exercises: [{
+    name: String,
+    rep: String,
+    series: String,
+    description: String,
+    influenceArea: [String],
+  }]
+});
+
+//employ model
+const model = mongoose.model("cards", schema);
+
 //return all cards by a user
-router.get("/allCards", (req, res) => {
-  res.send(cards);
+router.get("/allCards", async (req, res) => {
+  res.send(await model.find());
 });
 
 //return detail of single card by a user
-router.get("/detailCard", (req, res) => {
-  console.log("[SERVER] " + req.query.card);
-  for (let card of cards) {
-    console.log("[SERVER] say " + card.id);
-    if (card.id == req.query.card) {
-      res.send(card);
-    }
-  }
-  res.send({ err: "error" });
+router.get("/detailCard", async (req, res) => {
+  res.send(await model.findById(req.query.card));
 });
 
 //create a new card for a user
-router.post("/createCard", (req, res) => {
-  cards.push(req.body);
-  res.send({ succ: "insert completed" });
+router.post("/createCard", async (req, res) => {
+  console.log(req.body);
+  let e = await model.insertMany([req.body]);
+  if(e){
+    res.send({ succ: "insert completed" });
+  }else{
+    res.send({neg: "an error occurred"});
+  }
 });
 
 module.exports = router;
