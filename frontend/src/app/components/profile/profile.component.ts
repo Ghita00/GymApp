@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
   public cards: Array<Card> = [];
   public userQueryParam : string = "";
   public user: User = {
-    id : "0000",
+    _id : "0000",
     name: "name",
     img: null,
     surname: "surname",
@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams
       .subscribe(params => {
-        console.log(params);
+        console.log('params', params);
         this.userQueryParam = params["user"]
       }
     )

@@ -13,6 +13,7 @@ export class VisualCardComponent implements OnInit {
   //form search
   // @ts-ignore
   public formSearch: FormGroup;
+  public messageError: boolean = false;
 
   //datas
   public users: Array<User> = [];
@@ -54,6 +55,8 @@ export class VisualCardComponent implements OnInit {
       })
     }else{
       this.subscribeUserFilter = this.userService.getSingleUserByName(name).subscribe((data: Array<User>) => {
+        if(data.length == 0)
+          this.messageError = true;
         this.users = data;
         console.log(this.users);
       })

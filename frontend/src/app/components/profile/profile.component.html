@@ -75,7 +75,7 @@
                 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                     <!--single card-->
                     <a *ngFor="let card of cards" 
-                    class="group shadow-2xl mr-4" routerLink="/detail" [queryParams]="{user: user.id, card:card.id}">
+                    class="group shadow-2xl mr-4" routerLink="/detail" [queryParams]="{user: user._id, card:card.id}">
                         <div class="h-4 bg-orange-500 w-100"></div>
                         <h3 class="mt-1 text-lg font-bold text-gray-900 mx-5">{{card.name}}</h3>
                         <p class="mt-3 text-m text-gray-900 mx-5 mb-5">{{card.desc}}</p>

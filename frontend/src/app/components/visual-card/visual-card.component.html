@@ -13,8 +13,8 @@
                     class="xl:w-96 border rounded-lg p-2 mr-5 sm:w-60">
                 <button type="submit" class="border rounded-lg p-2 mySubmitButton place-content-center">Cerca</button>
             </form>
-
         </div>
+        <h3 [hidden]="!messageError" class="mt-3"> Non è stato trovato nessun utente associato a questo profilo.</h3>
     </div>
 
     <div class="col-span-2">
@@ -29,8 +29,8 @@
                         Schede create: {{user.cardsId ? user.cardsId.length : 0}}
                     </p>
                     <div class="grid place-items-center myButtonVisualCard">
-                        <a class="text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded my-4"
-                            routerLink="/userManagment" [queryParams]="{user: user.id}" routerLinkActive="active"
+                        <a class="text-center bg-orange-500 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded my-4"
+                            routerLink="/userManagment" [queryParams]="{'user': user._id}" routerLinkActive="active"
                             ariaCurrentWhenActive="page">
                             Visualizza
                         </a>

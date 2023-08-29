@@ -9,7 +9,6 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { Page404Component } from './components/page404/page404.component';
 import { NewUserComponent } from './components/new-user/new-user.component';
-import { AccountComponent } from './components/account/account.component';
 import { NewCardComponent } from './components/new-card/new-card.component';
 import { InfoCardComponent } from './components/info-card/info-card.component';
 import { LoginComponent } from './components/login/login.component';
@@ -17,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ModalExercisComponent } from './components/modal-exercis/modal-exercis.component';
 import { HttpClientModule } from '@angular/common/http'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LogoutComponent } from './components/logout/logout.component';
  
 @NgModule({
   declarations: [
@@ -27,12 +27,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     Page404Component,
     NewUserComponent,
-    AccountComponent,
     NewCardComponent,
     InfoCardComponent,
     LoginComponent,
     FooterComponent,
-    ModalExercisComponent
+    ModalExercisComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

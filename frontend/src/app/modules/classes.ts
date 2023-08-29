@@ -18,7 +18,7 @@ export interface Execise {
 }
 
 export interface User{
-    id: string,
+    _id: string,
     name: string,
     img?: string | null,
     surname: string,

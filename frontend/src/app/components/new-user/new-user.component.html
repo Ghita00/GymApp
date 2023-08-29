@@ -3,6 +3,10 @@
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Crea un nuovo atleta</h2>
       <p class="mt-2 text-lg leading-8 text-gray-600">Inserisci un nuovo atleta all'interno del tuo database</p>
     </div>
+
+    <h3 [hidden]="!error" class="text-red-600 text-center mt-3"> Si è verificato un errore durante la procedura di autenticazione. Riprovare grazie.</h3>
+
+
     <form [formGroup]="formCreate" (ngSubmit)="onSubmit()"
      class="mx-auto mt-16 max-w-4xl" >
       <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -36,8 +40,8 @@
         </div>
       </div>
       <div class="my-10 mx-28">
-        <button type="submit"  class="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm
-         hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Aggiungi</button>
+        <button type="submit" class="block w-full rounded-md  px-3.5 py-2.5 text-center text-sm font-semibold
+         text-white shadow-sm bg-orange-500 hover:bg-orange-700">Aggiungi</button>
       </div>
     </form>
 </div>

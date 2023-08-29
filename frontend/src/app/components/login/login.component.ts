@@ -4,6 +4,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { EmployService } from 'src/app/services/employ.service';
 import { CredentialEmploy } from 'src/app/modules/classes';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -22,22 +23,21 @@ export class LoginComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private router: Router,
-    private employSerivce: EmployService) {
+    private employSerivce: EmployService,
+    private cookieService: CookieService) {
     this.subscribeEmployLogin = Subscription.EMPTY;
   }
 
   ngOnInit(): void {
-    this.route.queryParams
-      .subscribe(params => {
-        console.log(params);
-        this.employName = params["user"]
-      }
-      );
 
     this.formLogin = new FormGroup({
       user: new FormControl(),
       password: new FormControl()
     })
+
+    if(this.cookieService.get('User')){
+      this.router.navigate(['/home']);
+    }
   }
 
   OnDestroy(): void {
@@ -53,7 +53,8 @@ export class LoginComponent implements OnInit {
     this.subscribeEmployLogin = this.employSerivce.loginEmploy(credential).subscribe((data: any) => {
       console.log(data);
       if (data.connect != false) {
-        this.router.navigate(['/']);
+        this.cookieService.set('User', credential.user);
+        this.router.navigate(['/home']);
       } else {
         this.messageError = true;
       }

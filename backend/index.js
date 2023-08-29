@@ -20,8 +20,8 @@ const port = 8000;
 app.use(
   cors({
     origin: "http://localhost:4200",
-  })
-);
+  }) 
+); 
 app.use(userRoute);
 app.use(cardRoute);
 app.use(employRoute)

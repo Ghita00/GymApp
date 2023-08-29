@@ -14,8 +14,8 @@ export class NewUserComponent implements OnInit {
   //form create
   // @ts-ignore
   public formCreate: FormGroup;
-
-  public subscribeUser: Subscription
+  public subscribeUser: Subscription;
+  public error: boolean = false;
 
   constructor(
     private router: Router,
@@ -39,10 +39,17 @@ export class NewUserComponent implements OnInit {
 
   onSubmit(): void{
     console.log(this.formCreate.value);
+    this.error = false;
     let user = this.formCreate.value;
     user.cardsId = null;
     user.inscriptionDate = Date.now();
     user.lastCardDate = null;
+
+    if(user.name == null || user.surname == null)
+      this.error = true;
+  
+    if(user.name == '' || user.surname == '')
+      this.error = true;
 
     this.router.navigate(['/']);
     this.subscribeUser = this.userService.insertUser(user).subscribe((data: any) => {
