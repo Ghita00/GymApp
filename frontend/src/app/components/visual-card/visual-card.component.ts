@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { User } from 'src/app/modules/classes';
 import { UserServiceService } from 'src/app/services/user-service.service';
 import { FormGroup, FormControl } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-visual-card',
@@ -23,13 +24,16 @@ export class VisualCardComponent implements OnInit {
   private subscribeUserFilter: Subscription;
 
   constructor(
-    private userService: UserServiceService
+    private userService: UserServiceService,
+    private cookieService: CookieService
   ) {
     this.subscribeUser = Subscription.EMPTY;
     this.subscribeUserFilter = Subscription.EMPTY;
   }
 
   ngOnInit(): void {
+    this.checkProfile();
+
     this.subscribeUser = this.userService.getAllUser().subscribe((data: Array<User>) => {
       this.users = data;
       console.log(this.users);
@@ -60,7 +64,14 @@ export class VisualCardComponent implements OnInit {
         this.users = data;
         console.log(this.users);
       })
-    } 
+    }
+  }
+
+  checkProfile():void {
+    let trainer: HTMLElement | null = document.getElementById('profileTrainer')
+    let str = this.cookieService.get('User');
+    if(trainer)
+      trainer.innerHTML = str.charAt(0).toUpperCase() + str.slice(1);
   }
 
 }

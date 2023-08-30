@@ -1,98 +1,101 @@
 <div class="p-8">
     <!--user information-->
     <div class="max-w-8xl mx-auto px-8">
-        <h2 class="mt-2 max-w-5xl text-slate-900 text-6xl tracking-tight font-bold">
-            {{user.name}} {{user.surname}}
-        </h2>
-        <div class="mt-4 max-w-3xl prose prose-slate dark:prose-dark">
-            {{user.description}}
-        </div>
-    </div> 
+      <h2 class="mt-2 max-w-5xl text-slate-900 text-6xl tracking-tight font-bold">
+          {{user.name}} {{user.surname}}
+      </h2>
+      <div class="mt-4 max-w-3xl prose prose-slate dark:prose-dark">
+          {{user.description}}
+      </div>
+    </div>
 
     <h3 class="ml-8 mt-6 text-3xl font-bold">
-        Informazioni Tecniche
+      Informazioni Tecniche
     </h3>
-    <!--tecnical information desktop-->
-    <div class="hidden md:block">
-        <div class="relative max-w-8xl mb-6 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mt-3">
-            <dl class="relative flex flex-wrap h-14 overflow-hidden">
-                <div class="">
-                    <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Schede create</dt>
-                    <dd class="text-center leading-6 mt-2 text-slate-700 dark:text-slate-200">{{user.cardsId ? user.cardsId.length : 0}}</dd>
-                </div>
-                <div class="border-l border-slate-500/10 dark:border-slate-400/10 ml-6 pl-6 lg:ml-8 lg:pl-8">
-                    <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data iscrizione</dt>
-                    <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
-                        {{user.inscriptionDate}}
-                    </dd>
-                </div>
-                <div class="border-l border-slate-500/10 dark:border-slate-400/10 ml-6 pl-6 lg:ml-8 lg:pl-8">
-                    <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data creazione ultima scheda</dt>
-                    <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
-                        {{user.lastCardDate}}
-                    </dd>
-                </div>
-            </dl>
-        </div>
+    <div class="ml-8 mt-4 max-w-3xl prose prose-slate dark:prose-dark">
+      Tutte le informazioni tecniche relative all'atleta
     </div>
-    
 
-    <!--tecnical information mobile-->
-  <div class="md:hidden block px-4">
-    <div class="relative max-w-8xl pb-6 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mt-3">
-        <div>
-            <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Schede create</dt>
-            <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">{{user.cardsId ? user.cardsId.length : 0}}</dd>
+    <div class="ml-8 xs:ml-0 pb-14">
+      <div class="max-w-7xl">
+        <div class="grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-gray-200 sm:mt-16 lg:mx-0 lg:max-w-none md:grid-cols-2 lg:grid-cols-3">
+          <div class="flex max-w-xl flex-col items-start justify-between">
+            <div class="group relative">
+              <h3 class="text-2xl pb-4 font-semibold leading-6 text-gray-900">
+                Schede create
+              </h3>
+              <p *ngIf="user.cardsId && user.cardsId.length > 0" class="max-w-3xl prose prose-slate dark:prose-dark">
+                {{user.cardsId.length}}
+              </p>
+              <p *ngIf="!user.cardsId || user.cardsId.length == 0" class="max-w-3xl prose prose-slate dark:prose-dark">
+                ---
+              </p>
+            </div>
+          </div>
+
+          <div class="flex max-w-xl flex-col items-start justify-between">
+            <div class="group relative">
+              <h3 class="text-2xl pb-4 font-semibold leading-6 text-gray-900">
+                Schede create
+              </h3>
+              <p *ngIf="user.cardsId && user.cardsId.length > 0" class="max-w-3xl prose prose-slate dark:prose-dark">
+                {{user.cardsId.length}}
+              </p>
+              <p *ngIf="!user.cardsId || user.cardsId.length == 0" class="max-w-3xl prose prose-slate dark:prose-dark">
+                ---
+              </p>
+            </div>
+          </div>
+
+          <div class="flex max-w-xl flex-col items-start justify-between">
+            <div class="group relative">
+              <h3 class="text-2xl pb-4 font-semibold leading-6 text-gray-900">
+                Schede create
+              </h3>
+              <p *ngIf="user.cardsId && user.cardsId.length > 0" class="max-w-3xl prose prose-slate dark:prose-dark">
+                {{user.cardsId.length}}
+              </p>
+              <p *ngIf="!user.cardsId || user.cardsId.length == 0" class="max-w-3xl prose prose-slate dark:prose-dark">
+                ---
+              </p>
+            </div>
+          </div>
         </div>
-        <div>
-            <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data iscrizione</dt>
-            <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
-                {{user.inscriptionDate}}
-            </dd>
-        </div>
-        <div>
-            <dt class="text-[0.8125rem] leading-6 font-semibold text-slate-700 dark:text-slate-400">Data creazione ultima scheda</dt>
-            <dd class="text-sm leading-6 mt-2 text-slate-700 dark:text-slate-200">
-                {{user.lastCardDate}}
-            </dd>
-        </div>
+      </div>
     </div>
-  </div>
 
     <!--traing cards-->
-    <div class="max-w-8xl mx-auto px-8">
-        
-        <h4 class="mt-4 max-w-5xl text-slate-900 text-3xl tracking-tight font-bold">
-            Schede d'allenamento
-        </h4> 
-        <div class="mt-4 max-w-3xl prose prose-slate dark:prose-dark">
-            Tutte le schede di allenamento ordinate dalla più recente alla meno recente
-        </div>
-           
-        <div class="col-span-2">
-            <div class="mx-auto py-5">
-                <div class="grid gap-y-10 
-                xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-                    <!--single card-->
-                    <a *ngFor="let card of cards" 
-                    class="group shadow-2xl mr-4" routerLink="/detail" [queryParams]="{user: user._id, card:card.id}">
-                        <div class="h-4 bg-orange-500 w-100"></div>
-                        <h3 class="mt-1 text-lg font-bold text-gray-900 mx-5">{{card.name}}</h3>
-                        <p class="mt-3 text-m text-gray-900 mx-5 mb-5">{{card.desc}}</p>
-                        <hr>
-                        <p class="mt-4 text-sm text-gray-500 mx-5 mb-5">data di pubblicazione: {{card.pubDate}}</p>
-                        <p class=" text-sm text-gray-500 mx-5 mb-5">data di ultima modifica: {{card.modDate}}</p>
-                    </a>
-
-                    <!--new empty card-->
-                    <div class="group shadow-2xl mr-4 border-dashed border-2 border-grey-600 h-80">
-                        <a routerLink="/newCard" [queryParams]="{user:userQueryParam}" class="flex items-center h-full justify-center text-lg font-bold text-center hover:underline">Crea Nuova Scheda</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+    <h4 class="ml-8 max-w-5xl text-slate-900 text-3xl tracking-tight font-bold">
+      Schede d'allenamento
+    </h4>
+    <div class="ml-8 max-w-3xl prose prose-slate dark:prose-dark">
+        Tutte le schede di allenamento ordinate dalla più recente alla meno recente
     </div>
-</div> 
-    
-        
+
+    <div class="ml-8 mt-10">
+      <a routerLink="/newCard" [queryParams]="{user:userQueryParam}"
+      class="rounded-lg p-4 w-min text-white shadow-sm bg-orange-500 hover:bg-orange-700">
+      Crea Nuova Scheda</a>
+    </div>
+
+    <div class="max-w-8xl mx-auto px-8">
+      <div class="col-span-2">
+          <div class="mx-auto py-5">
+              <div class="grid gap-y-10
+              xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                  <!--single card-->
+                  <a *ngFor="let card of cards"
+                  class="group shadow-2xl mr-4 max-h-80" routerLink="/detail" [queryParams]="{user: user._id, card:card.id}">
+                      <div class="h-4 bg-orange-500 w-100"></div>
+                      <h3 class="mt-1 text-lg font-bold text-gray-900 mx-5">{{card.name}}</h3>
+                      <p class="mt-3 text-m text-gray-900 mx-5 mb-5">{{card.desc}}</p>
+                      <hr>
+                      <p class="mt-4 text-sm text-gray-500 mx-5 mb-5">data di pubblicazione: {{card.pubDate}}</p>
+                      <p class=" text-sm text-gray-500 mx-5 mb-5">data di ultima modifica: {{card.modDate}}</p>
+                  </a>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+

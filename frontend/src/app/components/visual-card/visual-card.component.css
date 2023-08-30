@@ -1,3 +1,7 @@
 .myButtonVisualCard{
-    margin-top: 20px;
+  margin-top: 20px;
+}
+
+.maxCard{
+  max-height: 750px
 }

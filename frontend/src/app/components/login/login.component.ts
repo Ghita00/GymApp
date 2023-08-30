@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.formLogin = new FormGroup({
       user: new FormControl(),
       password: new FormControl()
@@ -59,7 +58,6 @@ export class LoginComponent implements OnInit {
         this.messageError = true;
       }
     })
-
   }
 
 }

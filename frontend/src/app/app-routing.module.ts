@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'detail', component: InfoCardComponent, canActivate: [AuthGuard]},
   {path: 'logout', component: LogoutComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
-  {path: '', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: '', component: LoginComponent},
   {path: '**', component: Page404Component}
 ];
 
