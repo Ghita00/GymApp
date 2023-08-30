@@ -47,15 +47,13 @@ export class NewUserComponent implements OnInit {
 
     if(user.name == null || user.surname == null)
       this.error = true;
-  
-    if(user.name == '' || user.surname == '')
+    else if(user.name == '' || user.surname == '')
       this.error = true;
-
-    this.router.navigate(['/']);
-    this.subscribeUser = this.userService.insertUser(user).subscribe((data: any) => {
-      console.log(data);
-    })
-
-    
+    else{
+      this.router.navigate(['/']);
+      this.subscribeUser = this.userService.insertUser(user).subscribe((data: any) => {
+        console.log(data);
+      })
+    }
   }
 }

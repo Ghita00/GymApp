@@ -2,10 +2,9 @@ const bodyParser = require('body-parser');
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-
 const jsonParser = bodyParser.json();
 
-//employ schema
+//EMPLOY SCHEMA
 const schema = new mongoose.Schema({
   name: String,
   user: String,
@@ -13,13 +12,10 @@ const schema = new mongoose.Schema({
   userManagment: [String]
 });
 
-//employ model
+//EMPLOY MODEL
 const model = mongoose.model("employ", schema);
 
-router.get("/allEmploys", async (req, res) => {
-  res.send(await model.find());
-})
-
+//POST: TRIED LOGIN AND RETURN IF CREDENTIALS ARE VALID
 router.post("/login",jsonParser, async (req, res) => {
   let userFound = await model.find({
     user: req.body.user,
@@ -27,9 +23,9 @@ router.post("/login",jsonParser, async (req, res) => {
   })
   console.log(userFound)
   if(userFound.length != 0){
-    res.send({connect: true, message: "user found"});
+    res.status(200).send({message: "user found"});
   }else{
-    res.send({connect: false,message: "user not found"});
+    res.status(500).send({message: "user not found"});
   }
 })
 

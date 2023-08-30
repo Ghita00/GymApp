@@ -10,15 +10,15 @@
         <div class="mt-4 max-w-3xl prose prose-slate ">
             <form class="mt-6 mb-2" [formGroup]="formSearch" (ngSubmit)="onSubmit()">
                 <input formControlName="nameUser" type="text" name="" id="" placeholder="inserisci il nome dell'atleta"
-                    class="xl:w-96 border rounded-lg p-2 mr-5 sm:w-60">
-                <button type="submit" class="border rounded-lg p-2 mySubmitButton place-content-center">Cerca</button>
+                    class="border rounded-lg p-2 mr-5 xl:w-96 sm:w-60">
+                <button type="submit" class="text-center bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded my-4">Cerca</button>
             </form>
         </div>
         <h3 [hidden]="!messageError" class="mt-3"> Non è stato trovato nessun utente associato a questo profilo.</h3>
     </div>
 
     <div class="col-span-2">
-        <div class="mx-auto py-5">
+        <div class="mx-auto pb-5">
             <div class="grid gap-y-10
             xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                 <div *ngFor="let user of users" class="group shadow-2xl mr-4 mx-4 maxCard">

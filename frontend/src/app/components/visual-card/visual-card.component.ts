@@ -52,17 +52,21 @@ export class VisualCardComponent implements OnInit {
   onSubmit(): void {
     console.log(this.formSearch.value.nameUser)
     const name = this.formSearch.value.nameUser
-    if(name == undefined){
+    if(name == undefined || name == ''){
       this.subscribeUser = this.userService.getAllUser().subscribe((data: Array<User>) => {
         this.users = data;
         console.log(this.users);
       })
     }else{
       this.subscribeUserFilter = this.userService.getSingleUserByName(name).subscribe((data: Array<User>) => {
-        if(data.length == 0)
+        if(data.length == 0){
           this.messageError = true;
-        this.users = data;
-        console.log(this.users);
+          this.users = []
+        }else{
+          this.messageError = false;
+          this.users = data;
+          console.log(this.users);
+        }
       })
     }
   }

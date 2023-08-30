@@ -13,6 +13,8 @@ mongoose.connect(
 const cardRoute = require("./routers/Card.js");
 const userRoute = require("./routers/User.js");
 const employRoute = require("./routers/Employer.js");
+const exerciseRoute = require("./routers/Exercise.js");
+const exerciseIncardRoute = require("./routers/ExerciseInCard.js");
 
 //setup server
 const app = express();
@@ -24,7 +26,9 @@ app.use(
 ); 
 app.use(userRoute);
 app.use(cardRoute);
-app.use(employRoute)
+app.use(employRoute);
+app.use(exerciseRoute);
+app.use(exerciseIncardRoute);
 
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
