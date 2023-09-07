@@ -11,7 +11,7 @@ const schema = new mongoose.Schema({
   pubDate: Date,
   modDate: Date,
   color: String,
-  exercisesId: [String]
+  EmployNameSurname:String,
 });
 
 //CARD MODEL
