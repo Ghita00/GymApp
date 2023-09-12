@@ -3,6 +3,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const jsonParser = bodyParser.json();
+const ObjectId = require('mongodb').ObjectId;
 
 //CARD SCHEMA
 const schema = new mongoose.Schema({
@@ -23,18 +24,23 @@ router.get("/allCards", async (req, res) => {
 });
 
 //GET: RETURN ALL CARD INFORMATION
-router.get("/detailCard", async (req, res) => {
-  res.status(200).send(await model.findById(req.query.card));
+router.get("/detailCard", jsonParser, async (req, res) => {
+  let idCard = req.body.idCard;
+  console.log(idCard)
+  let cardDetail = await model.findById(idCard);
+
+  if(!cardDetail || cardDetail.length == 0){
+      res.status(500).send({message: "an error occurred"});
+  }else{
+      res.status(200).send(cardDetail);
+  }  
 });
 
 //POST: CREATE A NEW CARD AND RETURN OUTCOME
-router.post("/createCard", async (req, res) => {
-  console.log(req.body);
+router.post("/createCard", jsonParser, async (req, res) => {
   let newCard = await model.insertMany([req.body]);
-  //todo refactor!
-  //todo add update owner of card
   if(newCard){
-    res.status(200).send({message: "insert completed" });
+    res.status(200).send({message: newCard });
   }else{
     res.status(500).send({message: "an error occurred"});
   }
